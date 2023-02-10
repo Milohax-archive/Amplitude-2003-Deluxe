@@ -1,3 +1,5 @@
+;; stolen from OPM demo, i'm hoping we can steal it without repercussions
+
 ; These must correspond to program enumerations.  When it becomes
 ; too painful to maintain by hand, we'll write a script to do it,
 ; to be run in the "data build" step.
