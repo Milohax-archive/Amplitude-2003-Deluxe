@@ -10,10 +10,8 @@
 		('avatar_body_animate' 'guitar')
 	)
 )
-(
-   'new_track'
-   (
-      'conditions'
+('new_track'
+   ('conditions'
       ('instrument' kBass)
    )
    (
@@ -26,7 +24,7 @@
    'new_track'
    (
       'conditions'
-      ('instrument' kSynth)
+      ('instrument' 2)
    )
    (
       'conditions'
@@ -34,8 +32,8 @@
    )
    (
       'actions'
-      ('avatar_instrument' 'synth')
-      ('avatar_body_animate' 'synth')
+      ('avatar_instrument' 'fx')
+      ('avatar_body_animate' 'fx')
    )
 )
 ('new_track' 
@@ -46,8 +44,8 @@
       ('music_mode' kScratching)
    )
    ('actions' 
-      ('avatar_instrument' 'fx') 
-      ('avatar_body_animate' 'fx')
+      ('avatar_instrument' 'synth') 
+      ('avatar_body_animate' 'synth')
    )
 )
 ('new_track' 
