@@ -499,10 +499,8 @@
 )
 (
    'begin'
-   (
-      'conditions'
-      '!'
-      ('path_already_unlocked' 1)
+   ('conditions'
+      !('path_already_unlocked' TRUE)
    )
    (
       'actions'

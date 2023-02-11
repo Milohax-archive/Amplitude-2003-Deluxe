@@ -1,8 +1,7 @@
 ; .bin sources:
 ;   launch/launch_start.txt
 
-(
-   'begin'
+('begin'
    ('actions'
       0 ('blur'
          0.8
