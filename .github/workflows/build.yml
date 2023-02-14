@@ -1,0 +1,23 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build_amp03dx:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build ARK
+        run: |
+          chmod +x dependencies/arkhelper
+          chmod +x dependenices/onyx
+          chmod +x dependencies/superfreq
+          dependencies/arkhelper dir2ark ./_ark ./GEN -v2
+      
+      - name: Upload result
+        uses: actions/upload-artifact@v2
+        with:
+          name: AMP03DX
+          path: GEN/main.ark
