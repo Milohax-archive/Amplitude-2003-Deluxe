@@ -9,11 +9,25 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup dependencies
+        run: |
+	  # mackiloha
+	  chmod +x dependencies/arkhelper
+	  chmod +x dependencies/superfreq
+	  # set up onyx latest
+	  curl -s https://api.github.com/repos/mtolly/onyxite-customs/releases/latest \
+	  | grep "browser_download_url.*AppImage" \
+	  | cut -d : -f 2,3 \
+	  | tr -d \" \
+	  | wget -i -
+          chmod +x *.AppImage
+          ./*.AppImage --appimage-extract
+          ln -s squashfs-root/usr/bin/onyx dependencies/onyx
+
+
+
       - name: Build ARK
         run: |
-          chmod +x dependencies/arkhelper
-          chmod +x dependenices/onyx
-          chmod +x dependencies/superfreq
           dependencies/arkhelper dir2ark ./_ark ./GEN -v2
       
       - name: Upload result
