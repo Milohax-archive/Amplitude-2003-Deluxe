@@ -10,14 +10,14 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Setup dependencies
-        run:
-	  chmod +x dependencies/arkhelper
-	  chmod +x dependencies/superfreq
-	  curl -s https://api.github.com/repos/mtolly/onyxite-customs/releases/latest \
-	  | grep "browser_download_url.*AppImage" \
-	  | cut -d : -f 2,3 \
-	  | tr -d \" \
-	  | wget -i -
+        run: |
+          chmod +x dependencies/arkhelper
+          chmod +x dependencies/superfreq
+          curl -s https://api.github.com/repos/mtolly/onyxite-customs/releases/latest \
+          | grep "browser_download_url.*AppImage" \
+          | cut -d : -f 2,3 \
+          | tr -d \" \
+          | wget -i -
           chmod +x *.AppImage
           ./*.AppImage --appimage-extract
           ln -s squashfs-root/usr/bin/onyx dependencies/onyx
