@@ -11,10 +11,8 @@ jobs:
 
       - name: Setup dependencies
         run:
-	  # mackiloha
 	  chmod +x dependencies/arkhelper
 	  chmod +x dependencies/superfreq
-	  # set up onyx latest
 	  curl -s https://api.github.com/repos/mtolly/onyxite-customs/releases/latest \
 	  | grep "browser_download_url.*AppImage" \
 	  | cut -d : -f 2,3 \
